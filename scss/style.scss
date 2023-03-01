@@ -1,0 +1,295 @@
+@use './colors' as colors;
+@use './media' as media;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 10px;
+}
+
+body {
+	min-height: 100vh;
+	background-image: url('../img/pattern-circles.svg'), url('../img/bg-pattern.svg'), url('../img/icon-check.svg'),
+		url('../img/icon-slider.svg');
+	background-repeat: no-repeat;
+	background-position: 50% 10%;
+	font-family: 'Manrope', sans-serif;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 4rem 2rem 2rem 2rem;
+	width: 100%;
+	max-width: 70rem;
+}
+
+.main-title,
+.title {
+	text-align: center;
+}
+
+.main-title {
+	margin-top: 4rem;
+	margin-bottom: 1.2rem;
+	font-size: 3.6rem;
+	color: colors.$textBackground;
+}
+
+.title {
+	font-size: 1.8rem;
+	color: colors.$text;
+}
+
+.pricing-section {
+	display: flex;
+	flex-direction: column;
+	margin-top: 6rem;
+	width: 100%;
+	height: 40rem;
+	background-color: colors.$pricingBackground;
+	box-shadow: 0 8px 8px rgba(0, 0, 0, 0.137);
+	border-radius: 1rem;
+
+	&__choice,
+	&__offers {
+		margin: 0 5rem 0 5rem;
+	}
+
+	&__choice {
+		display: flex;
+		flex-direction: column;
+		margin-top: 4rem;
+		height: 60%;
+
+		&__box {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 3rem;
+
+			&--views {
+				text-transform: uppercase;
+				letter-spacing: 0.2rem;
+				font-size: 1.5rem;
+				color: colors.$text;
+			}
+
+			&__label {
+				display: flex;
+				align-items: center;
+
+				&--per-month {
+					margin-right: 1rem;
+					color: colors.$textBackground;
+					font-size: 4.2rem;
+					font-weight: 800;
+				}
+				.month {
+					font-size: 1.5rem;
+					font-weight: 400;
+					color: colors.$text;
+				}
+			}
+		}
+
+		input[type='range'] {
+			appearance: none;
+			position: relative;
+			margin: 1rem 0;
+			background: #e7e2e29a;
+			border-radius: 1.2rem;
+			height: 1.2rem;
+			background-image: linear-gradient(hsl(174, 77%, 80%), hsl(174, 77%, 80%));
+			background-size: 40% 100%;
+			background-repeat: no-repeat;
+		}
+
+		input[type='range']::-webkit-slider-thumb {
+			appearance: none;
+			position: relative;
+			height: 5rem;
+			width: 5rem;
+			background: colors.$sliderBar;
+			border-radius: 50%;
+			box-shadow: 0px 0px 10px hsl(172, 68%, 70%);
+			transition: background .3s;
+			cursor: pointer;
+		}
+
+		input[type='range']:hover::-webkit-slider-thumb{
+			background: colors.$sliderBackground;
+		}
+
+		// input[type='range']::before,
+		// input[type='range']::after{
+		// 	position: absolute;
+		// 	transform: translateY(-50%);
+		// 	font-size: 1.8rem;
+		// 	color: hsla(180, 27%, 96%, 0.74);
+		// 	z-index: 10;
+		// 	transition: color .3s;
+		// 	cursor: pointer;
+		// }
+
+		// input[type='range']::before{
+		// 	content: '◀';
+		// 	top: 50%;
+		// 	left: 37%;
+			
+		// }
+
+		// input[type='range']::after{
+		// 	content: '▶';
+		// 	top: 50%;
+		// 	left: 42%;
+		// }
+
+		// input[type='range']:hover::before,
+		// input[type='range']:hover::after{
+		// 	color: hsla(0, 0%, 100%, 0.918);
+		// }
+
+		input[type='range']:focus::-webkit-slider-thumb {
+			background: colors.$sliderBackground;
+			box-shadow: 0px 0px 10px hsl(172, 73%, 47%);
+		}
+
+		&__btns {
+			display: flex;
+			justify-content: end;
+			margin-top: 6rem;
+			margin-right: 2rem;
+
+			&--billing,
+			&--billing-btn,
+			&--yearly-billing,
+			&--discount {
+				margin-right: 0.5rem;
+				padding: 0.4rem 0.8rem;
+				font-size: 1.4rem;
+			}
+
+			&--billing,
+			&--yearly-billing {
+				color: colors.$text;
+			}
+
+			&--billing-btn {
+				position: relative;
+				width: 5rem;
+				height: 2.4rem;
+				background-color: colors.$text;
+				border-radius: 3rem;
+				border: none;
+				cursor: pointer;
+				transition: background-color 0.3s;
+
+				.circle {
+					position: absolute;
+					top: 0.2rem;
+					left: 0.8rem;
+					display: block;
+					height: 2rem;
+					width: 2rem;
+					background-color: colors.$pricingBackground;
+					border-radius: 50%;
+				}
+
+				.active {
+					left: 46%;
+					animation: transformLeft 0.5s;
+				}
+
+				.unactive {
+					animation: comeBack 0.5s;
+				}
+			}
+
+			&--billing-btn:hover {
+				background-color: colors.$sliderBar;
+			}
+
+			.change-bg {
+				background-color: colors.$sliderBackground;
+			}
+
+			&--discount {
+				color: colors.$discountText;
+				background-color: colors.$discountBackground;
+			}
+
+			.mobile {
+				display: none;
+			}
+		}
+	}
+
+	.line {
+		display: block;
+		width: 100%;
+		opacity: 0.2;
+	}
+
+	&__offers {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 40%;
+		font-size: 1.5rem;
+
+		&__box {
+			line-height: 180%;
+
+			&__offer {
+				color: colors.$text;
+
+				.icon {
+					margin-right: 1.4rem;
+					color: colors.$sliderBackground;
+				}
+			}
+		}
+
+		&--btn {
+			padding: 1.4rem 6.6rem;
+			border-radius: 2.4rem;
+			background-color: colors.$textBackground;
+			color: colors.$pricingBackground;
+			border: none;
+			cursor: pointer;
+		}
+	}
+}
+
+@keyframes transformLeft {
+	from {
+		left: 0.8rem;
+	}
+
+	to {
+		left: 46%;
+	}
+}
+
+@keyframes comeBack {
+	from {
+		left: 46%;
+	}
+	to {
+		left: 0.8rem;
+	}
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="./img/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f46b99dfaa.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <main class="main">
+        
+        <div class="wrapper">
+            <h1 class="main-title">Simple, traffic-based pricing</h1>
+            <h2 class="title">Sign-up for our 30-days trial. No credit card required.</h2>
+            
+            <section class="pricing-section">
+
+                <div class="pricing-section__choice">
+
+                    <div class="pricing-section__choice__box">
+                    <p class="pricing-section__choice__box--views">100k pageviews</p>
+
+                    <div class="pricing-section__choice__box__label">
+                    <label for="per-month" class="pricing-section__choice__box__label--per-month">$16.00 </label>
+                    <p class="month">/ month</p>
+                        </div>
+
+                        </div>
+
+                    <input type="range" value="16" min="0" max="40" name="per-month" id="slider" step="0.01">
+
+                    <div class="pricing-section__choice__btns">
+                        <p class="pricing-section__choice__btns--billing">Monthly Billing</p>
+                        <i class="pricing-section__choice__btns--billing-btn"><span
+                                class="circle"></span></i>
+                         <p class="pricing-section__choice__btns--yearly-billing">Yearly Billing</p>
+                         <p class="pricing-section__choice__btns--discount">25% discount</p> 
+                         <p class="pricing-section__choice__btns--discount mobile">-25%</p> 
+
+                    </div>
+                </div>
+                <hr class="line">
+                
+                <div class="pricing-section__offers">
+
+                    <div class="pricing-section__offers__box">
+                        <p class="pricing-section__offers__box__offer"><i class="fa-solid fa-check icon"></i> Unlimited webstes</p>
+                        <p class="pricing-section__offers__box__offer"><i class="fa-solid fa-check icon"></i> 100% data ownership</p>
+                        <p class="pricing-section__offers__box__offer"><i class="fa-solid fa-check icon"></i> Email reports</p>
+                    </div>
+
+                    <button class="pricing-section__offers--btn">Start my trial</button>
+
+                </div>
+
+            </section>
+
+        </div> 
+   </main> 
+
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
