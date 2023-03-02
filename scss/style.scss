@@ -120,52 +120,60 @@ body {
 
 		input[type='range']::-webkit-slider-thumb {
 			appearance: none;
+			-webkit-appearance: none;
 			position: relative;
 			height: 5rem;
 			width: 5rem;
 			background: colors.$sliderBar;
+			background-image: url('../img/icon-slider.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: auto;
 			border-radius: 50%;
 			box-shadow: 0px 0px 10px hsl(172, 68%, 70%);
-			transition: background .3s;
 			cursor: pointer;
 		}
 
-		input[type='range']:hover::-webkit-slider-thumb{
-			background: colors.$sliderBackground;
+		input[type='range']::-moz-range-thumb {
+			appearance: none;
+			-moz-appearance: none;
+			position: relative;
+			height: 5rem;
+			width: 5rem;
+			background: colors.$sliderBar;
+			background-image: url('../img/icon-slider.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: auto;
+			border-radius: 50%;
+			box-shadow: 0px 0px 10px hsl(172, 68%, 70%);
+			cursor: pointer;
 		}
-
-		// input[type='range']::before,
-		// input[type='range']::after{
-		// 	position: absolute;
-		// 	transform: translateY(-50%);
-		// 	font-size: 1.8rem;
-		// 	color: hsla(180, 27%, 96%, 0.74);
-		// 	z-index: 10;
-		// 	transition: color .3s;
-		// 	cursor: pointer;
-		// }
-
-		// input[type='range']::before{
-		// 	content: '◀';
-		// 	top: 50%;
-		// 	left: 37%;
-			
-		// }
-
-		// input[type='range']::after{
-		// 	content: '▶';
-		// 	top: 50%;
-		// 	left: 42%;
-		// }
-
-		// input[type='range']:hover::before,
-		// input[type='range']:hover::after{
-		// 	color: hsla(0, 0%, 100%, 0.918);
-		// }
 
 		input[type='range']:focus::-webkit-slider-thumb {
 			background: colors.$sliderBackground;
 			box-shadow: 0px 0px 10px hsl(172, 73%, 47%);
+		}
+
+		input[type='range']:focus::-moz-range-thumb {
+			background: colors.$sliderBackground;
+			box-shadow: 0px 0px 10px hsl(172, 73%, 47%);
+		}
+
+		input[type='”range”']::-webkit-slider-runnable-track {
+			-webkit-appearance: none;
+			appearance: none;
+			box-shadow: none;
+			border: none;
+			background: transparent;
+		}
+
+		input[type='range']::-moz-range-track {
+			-moz-appearance: none;
+			appearance: none;
+			box-shadow: none;
+			border: none;
+			background: transparent;
 		}
 
 		&__btns {
