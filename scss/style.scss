@@ -107,8 +107,9 @@ body {
 		}
 
 		input[type='range'] {
+			-webkit-appearance: none;
+			-moz-appearance: none;
 			appearance: none;
-			position: relative;
 			margin: 1rem 0;
 			background: #e7e2e29a;
 			border-radius: 1.2rem;
@@ -119,9 +120,8 @@ body {
 		}
 
 		input[type='range']::-webkit-slider-thumb {
-			appearance: none;
 			-webkit-appearance: none;
-			position: relative;
+			appearance: none;
 			height: 5rem;
 			width: 5rem;
 			background: colors.$sliderBar;
@@ -135,9 +135,8 @@ body {
 		}
 
 		input[type='range']::-moz-range-thumb {
-			appearance: none;
 			-moz-appearance: none;
-			position: relative;
+			appearance: none;
 			height: 5rem;
 			width: 5rem;
 			background: colors.$sliderBar;
